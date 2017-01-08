@@ -1,0 +1,18 @@
+---
+title: "DataFest 2017 | Intro to dynamic web documents with dashboards and Shiny"
+author: "Christopher Gandrud & Justin Tingley"
+date: "18 January 2017"
+output:
+    ioslides_presentation:
+        css: datafest_slides.css
+        logo: img/iqss_logo_flat.png
+        highlight: kate
+---
+
+## Following along
+
+<br>
+<br>
+<br>
+
+This slide deck is available at: [GET].
