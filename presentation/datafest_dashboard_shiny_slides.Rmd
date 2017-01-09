@@ -16,3 +16,82 @@ output:
 <br>
 
 This slide deck is available at: [GET].
+
+## Acknowledgements
+
+<br>
+<br>
+<br>
+
+Thanks so much to Garrett Grolemund and RStudio for providing us with helpful suggestions and examples, some of which we've included here.
+
+## Prerequisits {.build}
+
+- Basic familiarity with R (e.g. can install packages, source files, and so on). 
+
+- Familiarity with R Markdown would be a benefit.
+
+- Have a laptop with the following software installed:
+
+    + R and RStudio
+
+    + `rmarkdown`, `flexdashboard`, and `shiny` packages for R
+
+- Working internet connection
+
+
+# Dynamic documents
+
+
+
+# R Markdown to HTML
+
+
+# htmlwidgets
+
+## Web-native visualisations
+
+<br> 
+
+There are a growing number of R packages that make it easy to create interactive/web native visualisations.
+
+Many of these are based on a framework called htmlwidgets.
+
+## Leaflet
+
+```{r message=FALSE}
+library(leaflet); library(dplyr)
+
+leaflet() %>% addTiles() %>% fitBounds(0, 40, 10, 50)
+```
+
+## networkD3
+
+```{r}
+library(networkD3); data(MisLinks); data(MisNodes)
+
+forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
+             Target = "target", Value = "value", NodeID = "name",
+             Group = "group", opacity = 0.7, zoom = TRUE)
+```
+
+# Static dashboards
+
+## What is a dashboard?
+
+<br>
+<br>
+<br>
+Dashboards provide an overview of key data.
+
+## For example . . .
+
+![](img/goog_dashboard_example.png)
+
+
+# Dynamic + Interactive Shiny Documents 
+
+
+# Dynamic + Interactive Dashboards 
+
+
