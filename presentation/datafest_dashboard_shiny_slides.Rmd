@@ -75,7 +75,11 @@ output:
 
 ## Simple example:
 
+<br>
+<br>
+<br>
 
+For example, we can summarise the survey data using: <>
 
 # htmlwidgets
 
