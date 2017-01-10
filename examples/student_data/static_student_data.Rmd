@@ -1,5 +1,5 @@
 ---
-title: "DataFest Hometowns: FAKE DATA"
+title: "Flexdasboard Student Example"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -7,47 +7,56 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+# Load required packages. Install if needed.
 library(flexdashboard)
-
-# Required packages
-library(geosphere)
+library(gsheet)
+library(ggmap)
 library(dplyr)
 library(leaflet)
-library(networkD3)
 library(sp)
 library(rworldmap)
+library(networkD3)
+library(geosphere)
 library(plotly)
 
-# Generat random long and lat
-rand_long <- runif(n = 60, min = 0, max = 100)
-rand_lat <- runif(n = 60, min = 20, max = 60)
+# Download survey data -----
+URL <- 'https://docs.google.com/spreadsheets/d/1QQkVYYdAPYjCQRO1Oupqze7Q8WULkfJ_cmDvJERumU4/edit#gid=317007960'
+student_data <- gsheet2tbl(URL)
 
-full <- cbind(rand_long, rand_lat)
+# Find hometown longitude and latitude -----
+hometowns <- student_data$`What do you consider to be your "home town"?`
+hometowns <- hometowns[!is.na(hometowns)]
+hometown_coords <- geocode(hometowns)
 ```
 
-Column {data-width=600}
+Column {data-width=650}
 -----------------------------------------------------------------------
 
 ### Map of Hometowns
 
-```{r}
+```{r hometown-map}
+# Map student hometowns
 leaflet() %>% addTiles() %>%
-    addMarkers(lng = rand_long, lat = rand_lat)
+    addMarkers(data = hometown_coords, lng = ~lon, lat = ~lat)
 ```
 
-Column {data-width=400}
+Column {data-width=350}
 -----------------------------------------------------------------------
 
 ### Close (<= 1,000 km) Hometowns Network
 
 ```{r}
+# Maximum distance for relationship
+max_distance <- 1000000 # in meters
+
+# Find distances between each home town
 distances <- vector()
-for (i in 1:nrow(full)) {
-    temp_indv <- full[i, ]
+for (i in 1:nrow(hometown_coords)) {
+    temp_indv <- hometown_coords[i, ]
     
-    temp_distances <- distm(full, temp_indv) %>% data.frame
+    temp_distances <- distm(hometown_coords, temp_indv) %>% data.frame
     temp_distances$id <- i
-    temp_distances$other_id <- 1:nrow(full)
+    temp_distances$other_id <- 1:nrow(hometown_coords)
     names(temp_distances)[1] <- 'distance'
     distances <- rbind(distances, temp_distances)
 }
@@ -57,14 +66,16 @@ distances <- distances[, c(2, 3, 1)]
 distances <- subset(distances, id != other_id)
 
 # Keep only nodes that are within 1,000 km of each other
-distances <- subset(distances, distance <= 1000000)
+distances <- subset(distances, distance <= max_distance)
 
+# Plot network
 simpleNetwork(distances[, 1:2], zoom = TRUE)
 ```
 
 ### Hometown Countries
 
 ```{r}
+# Function to find countries that each hometown is in
 coords2country = function(points)
 {  
     # Function from: http://stackoverflow.com/a/14342127
@@ -79,13 +90,14 @@ coords2country = function(points)
     # return the ADMIN names of each country
     indices$ISO3  
 }
+countries <- coords2country(hometown_coords)
 
-countries <- coords2country(full)
-
+# Find country counts
 countries_count <- table(countries)
 countries_count <- countries_count[countries_count > 0] 
 countries_count <- data.frame(countries_count)
 
+# Plot counts
 plot_ly(data = countries_count, x = ~countries, y = ~Freq) %>%
     layout(xaxis = list(title = ''),
            yaxis = list(title = 'Frequency'))

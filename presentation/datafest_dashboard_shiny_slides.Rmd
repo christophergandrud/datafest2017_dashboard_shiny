@@ -6,7 +6,6 @@ output:
     ioslides_presentation:
         css: datafest_slides.css
         logo: img/iqss_logo_flat.png
-        highlight: kate
 ---
 
 ```{r setup, include=FALSE}
@@ -29,7 +28,15 @@ This slide deck is available at: [GET].
 
 Thanks so much to Garrett Grolemund and RStudio for providing us with helpful suggestions and examples, some of which we've included here.
 
-## Prerequisits {.build}
+## About you
+
+<br>
+<br>
+<br>
+
+Complete the survey: <https://goo.gl/forms/b0UuRnpxpfjwpiD93>
+
+## Prerequisits
 
 - Basic familiarity with R (e.g. can install packages, source files, and so on). 
 
@@ -59,7 +66,7 @@ Thanks so much to Garrett Grolemund and RStudio for providing us with helpful su
 
 There are a growing number of R packages that make it easy to create interactive/web native visualisations.
 
-Many of these are based on a framework called htmlwidgets.
+Many of these are based on a framework called **htmlwidgets**.
 
 ## Leaflet
 
@@ -79,6 +86,21 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
              Group = "group", opacity = 0.7, zoom = TRUE)
 ```
 
+## dygraphs
+
+```{r}
+library(dygraphs)
+dygraph(nhtemp, main = "New Haven Temperatures") %>% 
+    dyRangeSelector(dateWindow = c("1920-01-01", "1960-01-01"))
+```
+
+## DT
+
+```{r}
+library(DT)
+datatable(iris, options = list(pageLength = 5))
+```
+
 # Static dashboards
 
 ## What is a dashboard?
@@ -86,12 +108,53 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
 <br>
 <br>
 <br>
-Dashboards provide an overview of key data.
+Dashboards provide an **overview** of key data.
+
+<br>
+
+The [flexdashboard](http://rmarkdown.rstudio.com/flexdashboard/) R package allows you to easily create dashboards with [R Markdown](http://rmarkdown.rstudio.com/). 
 
 ## For example . . .
 
 ![](img/goog_dashboard_example.png)
 
+## For example . . .
+
+![](img/zelig_downloads.png)
+
+## Getting started
+
+Once you have the flexdashboard package installed, in RStudio select `File` > `New File` > `R Markdown...`. Then, select `Flex Dashboard` from the `From Template` new R Markdown type:
+
+![](img/new_flexdashboard.png)
+
+## Basic flexdashboard syntax: Header
+
+Like other R Markdown documents, flexdashboards start with a [YAML](http://yaml.org/) header. E.g.:
+
+```
+---
+title: "DataFest 2017 | Intro to dynamic web documents"
+author: "Christopher Gandrud & Justin Tingley"
+date: "18 January 2017"
+output:
+    ioslides_presentation:
+        css: datafest_slides.css
+        logo: img/iqss_logo_flat.png
+---
+```
+
+## Basic flexdashboard syntax: Rows
+
+Dashboard rows are delimited by the 3rd level markdown header: `###`.
+
+![Source: <http://rmarkdown.rstudio.com/flexdashboard/>](img/3_row_rstudio.png)
+
+## Basic flexdashboard syntax: Columns
+
+Separate columns are delimited with `-------------------`
+
+![Source: <http://rmarkdown.rstudio.com/flexdashboard/>](img/2_col_rstudio.png)
 
 # Dynamic + Interactive Shiny Documents 
 
