@@ -57,6 +57,25 @@ Complete the survey: <https://goo.gl/forms/b0UuRnpxpfjwpiD93>
 
 # R Markdown to HTML
 
+## R Markdown Review
+
+<br> 
+You can use R Markdown to create HTML documents.
+
+See <http://tinyurl.com/hslac87> for an introduction to R Markdown.
+
+## R Markdown header
+
+The key is to declare `html_document` in the header. E.g.:
+
+```
+output:
+    html_document
+```
+
+## Simple example:
+
+
 
 # htmlwidgets
 
@@ -155,6 +174,20 @@ Dashboard rows are delimited by the 3rd level markdown header: `###`.
 Separate columns are delimited with `-------------------`
 
 ![Source: <http://rmarkdown.rstudio.com/flexdashboard/>](img/2_col_rstudio.png)
+
+## Do . . .
+
+We could make a dashboard from the hometowns you provided.
+
+Here's an example (using fake data): <http://tinyurl.com/hgk3fxx>
+
+<br>
+<br>
+
+**You:** make a similar dashboard using R source code available at: <http://tinyurl.com/zwszswb>
+
+Hint: it's typically good practice to place "setup" code in a separate chunk just under the header, with the code chunk option `include=FALSE`.
+
 
 # Dynamic + Interactive Shiny Documents 
 

@@ -58,3 +58,29 @@ simpleNetwork(distances[, 1:2], zoom = TRUE)
 
 
 # BAR PLOT CHUNK ---------------------------------------------------------------
+# Function to find countries that each hometown is in
+coords2country = function(points)
+{  
+    # Function from: http://stackoverflow.com/a/14342127
+    countriesSP <- getMap(resolution='low')
+    
+    #setting CRS directly to that from rworldmap
+    pointsSP = SpatialPoints(points, proj4string=CRS(proj4string(countriesSP)))  
+    
+    # use 'over' to get indices of the Polygons object containing each point 
+    indices = over(pointsSP, countriesSP)
+    
+    # return the ADMIN names of each country
+    indices$ISO3  
+}
+countries <- coords2country(hometown_coords)
+
+# Find country counts
+countries_count <- table(countries)
+countries_count <- countries_count[countries_count > 0] 
+countries_count <- data.frame(countries_count)
+
+# Plot counts
+plot_ly(data = countries_count, x = ~countries, y = ~Freq) %>%
+    layout(xaxis = list(title = ''),
+           yaxis = list(title = 'Frequency'))
