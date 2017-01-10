@@ -9,6 +9,10 @@ output:
         highlight: kate
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE)
+```
+
 ## Following along
 
 <br>
