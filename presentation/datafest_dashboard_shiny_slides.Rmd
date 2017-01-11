@@ -79,7 +79,7 @@ output:
 <br>
 <br>
 
-For example, we can summarise the survey data using: <>
+For example, we can summarise the survey data using: <http://tinyurl.com/jx4gty2>
 
 # htmlwidgets
 
@@ -197,5 +197,7 @@ Hint: it's typically good practice to place "setup" code in a separate chunk jus
 
 
 # Dynamic + Interactive Dashboards 
+
+# Serving Shiny Documents
 
 
