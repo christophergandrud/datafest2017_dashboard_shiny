@@ -315,8 +315,6 @@ Note: RPubs documents do not update when new data is available. It is a static f
 
 3. Add Shiny [inputs](http://shiny.rstudio.com/tutorial/lesson3/) and [outputs](http://shiny.rstudio.com/tutorial/lesson4/).
 
-4. Render all plots with [`renderPlot`](http://shiny.rstudio.com/reference/shiny/latest/renderPlot.html) so that they will be dynanically re-sizable.
-
 ## Shiny dashboard example
 
 ![](img/shiny_gey.png)
@@ -359,6 +357,11 @@ renderPlot({
 
 Create a new shiny dashboard that **subsets** our Google Sheets survey data based on participants **position** (e.g. "undergraduate", "faculty") and returns a bar plot of the subset's **R skill level**.
 
+R code available at: <http://tinyurl.com/hwp5pgf>
+
+## Result
+
+![](img/shiny_student_basic_screenshot.png)
 
 
 # Institutional considerations
@@ -366,6 +369,17 @@ Create a new shiny dashboard that **subsets** our Google Sheets survey data base
 [DUSTIN FILL IN]
 
 # Serving Shiny Documents
+
+## Hosting through shinyapps.io
+
+1. Create a [shinyapps.io](http://www.shinyapps.io/) account and follow sign up instructions.
+
+2. After **running** your shiny app, click on *Publish* > *Publish Document...* in the output viewer. 
+
+3. In the resulting pop-up box connect your ShinyApps.io account following the onscreen instructions and **publishe**.
+
+![](img/connect_publishers.png)
+
 
 
 
