@@ -8,7 +8,7 @@
 
 ## Prerequisits
 
-- Basic familiarity with R (e.g. can install packages, source files, and so on). 
+- Basic familiarity with R (e.g. can install packages, source files, and so on).
 
 - Familiarity with R Markdown would be a benefit.
 
@@ -16,7 +16,7 @@
 
     + R and RStudio
 
-    + `rmarkdown`, `flexdashboard`, and `shiny` packages for R
+    + `rmarkdown`, `flexdashboard`, and `shiny` R packages
 
 - Working internet connection
 
@@ -26,4 +26,4 @@
 
 - [ ] Creating static data dashboards with [flexdashboard](http://rmarkdown.rstudio.com/flexdashboard/).
 
-- [ ] Creating interactive data dashboards and other HTML documents with [shiny](https://shiny.rstudio.com/). 
+- [ ] Creating interactive data dashboards and other HTML documents with [shiny](https://shiny.rstudio.com/).
