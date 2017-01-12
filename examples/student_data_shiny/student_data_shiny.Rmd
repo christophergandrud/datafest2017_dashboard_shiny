@@ -28,7 +28,6 @@ student_data$position <- factor(student_data$position, levels = positions)
 
 r_skills <- c("Basic", "Intermediate", "Advanced")
 student_data$r_experience <- factor(student_data$r_experience, levels = r_skills)
-
 ```
 
 Column {.sidebar}
@@ -36,7 +35,7 @@ Column {.sidebar}
 
 ```{r}
 selectInput("position", label = "Select Particpants' Position",
-            choices = positions, selected = 'Harvard faculty')
+            choices = positions, selected = 'Undergraduate student')
 ```
 
 Column
