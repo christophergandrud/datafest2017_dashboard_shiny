@@ -1,6 +1,6 @@
 # DataFest 2017 | Intro to dynamic web documents with dashboards and Shiny
 
-*Christopher Gandrud* and *Justin Tingley*
+*Christopher Gandrud* and *Dustin Tingley*
 
 18 January 2017 (16:00-17:30)
 
@@ -14,7 +14,7 @@
 
 - Have a laptop with the following software installed:
 
-    + R and RStudio
+    + [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/)
 
     + `rmarkdown`, `flexdashboard`, and `shiny` R packages
 
