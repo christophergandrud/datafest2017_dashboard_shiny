@@ -14,7 +14,7 @@
 
 - Have a laptop with the following software installed:
 
-    + R and RStudio
+    + [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/)
 
     + `rmarkdown`, `flexdashboard`, and `shiny` packages for R
 
