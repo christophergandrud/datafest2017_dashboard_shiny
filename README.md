@@ -16,7 +16,7 @@
 
     + [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/)
 
-    + `rmarkdown`, `flexdashboard`, and `shiny` R packages
+    + `dplyr`, `rmarkdown`, `flexdashboard`, and `shiny` R packages
 
 - Working internet connection
 
