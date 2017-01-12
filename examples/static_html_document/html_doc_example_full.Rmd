@@ -3,10 +3,10 @@ title: "Student Dashboard Experience"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+    ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
 
-# Load packages 
+# Load packages
 library(gsheet)
 library(dplyr)
 library(plotly)
@@ -18,8 +18,8 @@ URL <- 'https://docs.google.com/spreadsheets/d/1QQkVYYdAPYjCQRO1Oupqze7Q8WULkfJ_
 student_data <- gsheet2tbl(URL)
 
 # Simplify variable names
-names(student_data) <- c('timestamp', 'position', 'r_experience', 
-                         'dashboard_experience', 'hometown', 
+names(student_data) <- c('timestamp', 'position', 'r_experience',
+                         'dashboard_experience', 'hometown',
                          'rmarkdown_experience')
 
 # Relevel factors
@@ -37,7 +37,7 @@ student_data$r_experience <- factor(student_data$r_experience, levels = c(
 
 Responses to "What type of participant are you?":
 
-```{r}
+    ```{r}
 # Find position counts
 position <- table(student_data$position) %>% data.frame
 
@@ -74,6 +74,22 @@ plot_ly(data = rm_exp, x = ~Var1, y = ~Freq) %>%
     layout(xaxis = list(title = ''),
            yaxis = list(title = 'Frequency'))
 ```
+
+# Dashboard Experience
+
+Responses to "Have you ever built a 'data dashboard'?"
+
+```{r}
+# Find position counts
+dash_exp <- table(student_data$dashboard_experience) %>% data.frame
+
+# Plot
+plot_ly(data = dash_exp, x = ~Var1, y = ~Freq) %>%
+    layout(xaxis = list(title = ''),
+           yaxis = list(title = 'Frequency'))
+```
+
+
 
 # Hometowns
 

@@ -51,9 +51,28 @@ Complete the survey: <https://goo.gl/forms/b0UuRnpxpfjwpiD93>
 - Working internet connection
 
 
-# Dynamic documents
+# Dynamic and interactive documents
 
+## Interactive documents
 
+When your output documents are in **HTML**, you can create interactive
+visualisations.
+
+Potentially--though not always--more engaging and could let users explore data 
+on their own.
+
+## Big distinction:
+
+**Client Side**: HTML documenst are rendered on the user's (client's) computer. Often
+**JavaScript in the browser**. You simply send them static HTML/JavaScript needed for
+their browser to create the plots. Could be sent from a services such as [RPubs](https://rpubs.com/).
+
+**Server Side**: Data manipulations and/or plots (e.g. with [shinyapps](https://www.shinyapps.io/)) are
+done on a **server in R**. Browsers don't come with R built in.
+
+## FILL IN
+
+[DUSTIN FILL IN]
 
 # R Markdown to HTML
 
@@ -62,9 +81,29 @@ Complete the survey: <https://goo.gl/forms/b0UuRnpxpfjwpiD93>
 <br> 
 You can use R Markdown to create HTML documents.
 
-See <http://tinyurl.com/hslac87> for an introduction to R Markdown.
+See <http://rmarkdown.rstudio.com/> for an introduction to R Markdown.
 
-[CODE CHUNK EXAMPLES]
+## Display code chunks refresh
+
+Use three back-ticks (```) to **start** and **end** a code chunk that is **not run**.
+
+To create a **knit-able** code chunk begin the chunk with ````{r}`. Close the chunk with another three ticks.
+
+## Chunk options
+
+Change how R Markdown chunks behave with **options**. Place
+options in the chunk head: ````{r echo=FALSE, error=FALSE}`
+
+| Option          | What it Does                                               |
+| --------------- | ---------------------------------------------------------- |
+| `echo=FALSE`    | Does not print the code only the output                    |
+| `error=FALSE`   | Does not print errors                                      |
+| `include=FALSE` | Does not include the code or output, but does run the code |
+| `fig.width`     | Sets figure width                                          |
+| `cache=TRUE`    | Cache the chunk. It is only run when the contents change.  |
+
+Many others at <http://yihui.name/knitr/options>
+
 
 ## R Markdown header
 
@@ -81,13 +120,23 @@ output:
 <br>
 <br>
 
-For example, we can summarise the survey data using: <http://tinyurl.com/jx4gty2>
+For example, we can summarise the survey data using: <http://tinyurl.com/jx4gty2>.
 
-[RELEVEL FACTORS]
+Which downloads your survey data from Google Sheets and creates . . .
 
-[ADD SCREENSHOT]
+## Static HTML example results
 
-[ADD A DO SLIDE, NEW PROPORTION]
+![](img/static_example.png)
+
+## Do . . . 
+
+<br>
+<br>
+
+Copy the code at <http://tinyurl.com/jx4gty2> used to create the survey summary document. 
+
+**Add an additional code chunk plotting** responses to the question "Have you ever built a 'data dashboard'?"
+
 
 # htmlwidgets
 
@@ -183,9 +232,26 @@ Dashboard rows are delimited by the 3rd level markdown header: `###`.
 
 ## Basic flexdashboard syntax: Columns
 
-Separate columns are delimited with `-------------------`
+Separate columns are delimited with `Column` followed by `-------------------`. Column widths can be set in the section heading with the `data-width` attribute.
 
 ![Source: <http://rmarkdown.rstudio.com/flexdashboard/>](img/2_col_rstudio.png)
+
+## Tabbed pages
+
+You can create multi-page dashboards by placing the table label followed by, on a new line, `======================`. E.g.
+
+```
+Net Downloads
+===========================================
+```
+
+![](img/zelig_downloads.png)
+
+## Tabsets
+
+Adding `.tabset` to a section heading can create tabs within a specific section.
+
+![](img/tabsets.png)
 
 ## Do . . .
 
@@ -198,15 +264,40 @@ Here's an example (using fake data): <http://tinyurl.com/hgk3fxx>
 
 **You:** make a similar dashboard using R source code available at: <http://tinyurl.com/zwszswb>
 
-Hint: it's typically good practice to place "setup" code in a separate chunk just under the header, with the code chunk option `include=FALSE`.
+Hint: it's typically good practice to place **setup code** in a separate chunk just under the header, with the code chunk option `include=FALSE`.
+
+## Full code
+
+<br>
+<br> 
+
+Full code for the exercise can be found: <http://tinyurl.com/zwk5het>.
+
+## Hosting documents created on the client-side
+
+## Hosting client-side rendered HTML
+
+There are lots of **free** services (e.g. RPubs, GitHub Pages) for hosting webpages for
+client side plot rendering.
 
 ## Hosting through RPubs
 
-[PUT EXAMPLE ON THERE]
+1. Create an [RPubs](https://rpubs.com/) account.
 
-## Summary
+2. After **knitting** an R Markdown document to HTML, click on *Publish* > *Publish Document...* in the output viewer. 
 
-[QUANTMOD Example]
+3. In the resulting pop-up box, click *RPubs* > *Publish*
+
+![](img/connect_publishers.png)
+
+## RPubs dashboard example
+
+<br>
+<br>
+
+For example: <http://rpubs.com/christophergandrud/datafest_ex_dashboard>.
+
+Note: RPubs documents do not update when new data is available. It is a static file host.
 
 # Dynamic + Interactive Shiny Documents 
 
@@ -216,16 +307,66 @@ Hint: it's typically good practice to place "setup" code in a separate chunk jus
 
 # Dynamic + Interactive Dashboards 
 
-## Shiny syntax
+## Shiny flexdashboards
 
-[RStudio example]
+1. Add `runtime: shiny` to the YAML header options to declare the dashboard a shiny flexdashboard.
+
+2. Add a `{.sidebar}` attribute to the first column in the dashboard. This is where we will place the controls.
+
+3. Add Shiny [inputs](http://shiny.rstudio.com/tutorial/lesson3/) and [outputs](http://shiny.rstudio.com/tutorial/lesson4/).
+
+4. Render all plots with [`renderPlot`](http://shiny.rstudio.com/reference/shiny/latest/renderPlot.html) so that they will be dynanically re-sizable.
+
+## Shiny dashboard example
+
+![](img/shiny_gey.png)
+
+Source: <http://rmarkdown.rstudio.com/flexdashboard/shiny.html>
+
+## Result
+
+![](img/geyser_screenshot.png)
+
+## Syntax breakdown: Inputs
+
+```{r eval=FALSE}
+selectInput("n_breaks", label = "Number of bins:",
+            choices = c(10, 20, 35, 50), selected = 20)
+
+sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+            min = 0.2, max = 2, value = 1, step = 0.2)
+```
+
+Creates **two elements in** a new `input` object: `n_breaks` and `bw_adjust`.
+
+## Syntax breakdown: Outputs
+
+`input` is passed to the output code in `renderPlot`:
+
+```{r eval=FALSE}
+renderPlot({
+    hist(faithful$eruptions, probability = TRUE, 
+         breaks = as.numeric(input$n_breaks),
+         xlab = "Duration (minutes)", 
+         main = "Geyser Eruption Duration")
+    
+    dens <- density(faithful$eruptions, adjust = input$bw_adjust)
+    lines(dens, col = "blue")
+})
+```
 
 ## Do . . . 
 
-[UPDATE dashboard]
+Create a new shiny dashboard that **subsets** our Google Sheets survey data based on participants **position** (e.g. "undergraduate", "faculty") and returns a bar plot of the subset's **R skill level**.
+
+
 
 # Institutional considerations
 
+[DUSTIN FILL IN]
+
 # Serving Shiny Documents
+
+
 
 
