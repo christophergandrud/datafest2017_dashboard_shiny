@@ -26,7 +26,7 @@ This slide deck is available at: [GET].
 <br>
 <br>
 
-**Thanks** so much to **Garrett Grolemund and RStudio** for providing us with helpful suggestions and examples, some of which we've included here. 
+**Thanks** so much to **Garrett Grolemund and RStudio** for providing us with helpful suggestions and examples, some of which we've included here.
 
 Thanks to the open source R community for making life way cooleR.
 
@@ -40,7 +40,7 @@ Complete the survey: <https://goo.gl/forms/b0UuRnpxpfjwpiD93>
 
 ## Prerequisits
 
-- Basic familiarity with R (e.g. can install packages, source files, and so on). 
+- Basic familiarity with R (e.g. can install packages, source files, and so on).
 
 - Familiarity with R Markdown would be a benefit.
 
@@ -60,7 +60,7 @@ Complete the survey: <https://goo.gl/forms/b0UuRnpxpfjwpiD93>
 When your output documents are in **HTML**, you can create interactive
 visualisations.
 
-Potentially--though not always--more engaging and could let users explore data 
+Potentially--though not always--more engaging and could let users explore data
 on their own.
 
 ## Big distinction:
@@ -84,7 +84,7 @@ Can be **instantaneously updated** to reflect new data.
 
 ## R Markdown Review
 
-<br> 
+<br>
 You can use R Markdown to create HTML documents.
 
 See <http://rmarkdown.rstudio.com/> for an introduction to R Markdown.
@@ -134,12 +134,12 @@ Which downloads your survey data from Google Sheets and creates . . .
 
 ![](img/static_example.png)
 
-## Do . . . 
+## Do . . .
 
 <br>
 <br>
 
-Copy the code at <http://tinyurl.com/jx4gty2> used to create the survey summary document. 
+Copy the code at <http://tinyurl.com/jx4gty2> used to create the survey summary document.
 
 **Add an additional code chunk plotting** responses to the question "Have you ever built a 'data dashboard'?"
 
@@ -167,7 +167,7 @@ Packages are rapidly expanding R's capabilities.
 
 ## Web-native visualisations
 
-<br> 
+<br>
 
 There are a growing number of R packages that make it easy to create interactive/web native visualisations.
 
@@ -195,7 +195,7 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
 
 ```{r}
 library(dygraphs)
-dygraph(nhtemp, main = "New Haven Temperatures") %>% 
+dygraph(nhtemp, main = "New Haven Temperatures") %>%
     dyRangeSelector(dateWindow = c("1920-01-01", "1960-01-01"))
 ```
 
@@ -217,7 +217,7 @@ Dashboards provide an **overview** of key data.
 
 <br>
 
-The [flexdashboard](http://rmarkdown.rstudio.com/flexdashboard/) R package allows you to easily create dashboards with [R Markdown](http://rmarkdown.rstudio.com/). 
+The [flexdashboard](http://rmarkdown.rstudio.com/flexdashboard/) R package allows you to easily create dashboards with [R Markdown](http://rmarkdown.rstudio.com/).
 
 ## For example . . .
 
@@ -297,7 +297,7 @@ Hint: it's typically good practice to place **setup code** in a separate chunk j
 ## Full code
 
 <br>
-<br> 
+<br>
 
 Full code for the exercise can be found at: <http://tinyurl.com/zwk5het>.
 
@@ -316,7 +316,7 @@ client-side rendering.
 
 1. Create an [RPubs](https://rpubs.com/) account.
 
-2. After **knitting** an R Markdown document to HTML, click on *Publish* > *Publish Document...* in the output viewer. 
+2. After **knitting** an R Markdown document to HTML, click on *Publish* > *Publish Document...* in the output viewer.
 
 3. In the resulting pop-up box, click *RPubs* > *Publish*
 
@@ -331,20 +331,25 @@ For example: <http://rpubs.com/christophergandrud/datafest_ex_dashboard>.
 
 Note: RPubs documents do not update when new data is available. It is a static file host.
 
-# Dynamic + Interactive Shiny Documents 
+# Dynamic + Interactive Shiny Apps
 
-## Chris I don't have examples of shiny documents. Can you put something in maybe from RStudio?
+[Shiny](https://shiny.rstudio.com/) apps allow you to create interactive apps that leverage R to conduct analyses in the browser and present results.
 
+For example:
 
-# Dynamic + Interactive Dashboards 
+- <https://shiny.rstudio.com/gallery/retirement-simulation.html>
+
+- <https://shiny.rstudio.com/gallery/bus-dashboard.html>
+
 
 ## Shiny + Flexdashboards
 
-You can turn your flexdashboards into full data exploration apps using Shiny + Flexdasboards. 
+<br>
+<br>
+
+You can turn your flexdashboards into full data exploration apps using Flexdasboards + Shiny.
 
 See: <https://rstudio.github.io/shinydashboard/>
-
-[ADD MORE]
 
 ## Shiny flexdashboards
 
@@ -382,11 +387,11 @@ Creates **two elements in** a new `input` object: `n_breaks` and `bw_adjust`.
 
 ```{r eval=FALSE}
 renderPlot({
-    hist(faithful$eruptions, probability = TRUE, 
+    hist(faithful$eruptions, probability = TRUE,
          breaks = as.numeric(input$n_breaks),
-         xlab = "Duration (minutes)", 
+         xlab = "Duration (minutes)",
          main = "Geyser Eruption Duration")
-    
+
     dens <- density(faithful$eruptions, adjust = input$bw_adjust)
     lines(dens, col = "blue")
 })
@@ -394,11 +399,16 @@ renderPlot({
 
 ## Its simpler than it seems
 
-Note that in previous examples, almost all of the code is exactly the same as what you would use in R anyways.
+<br>
+<br>
 
-## Do . . . 
+Note that in previous examples, **almost all of the code is exactly the same** as what you would use in R anyways.
 
-Create a new shiny dashboard that **subsets** our Google Sheets survey data based on participants **position** (e.g. "undergraduate", "faculty") and returns a bar plot of the subset's **R skill level**.
+The only difference is the includsion of functions to declare app inputs and outputs.
+
+## Do . . .
+
+Create a new shiny dashboard that **subsets** our Google Sheets survey data based on participants **position** (e.g. "undergraduate", "faculty") and **returns a bar plot** of the subset's **R skill level**.
 
 R code available at: <http://tinyurl.com/hwp5pgf>
 
@@ -421,7 +431,7 @@ Lets look at some examples.
 ![](img/irt.png)
 
 
- 
+
 
 
 ## Examples: Sankey diagram for flow through HarvardX courses
@@ -441,13 +451,13 @@ Lets look at some examples.
 
 <https://hmdc.shinyapps.io/GovDGSExample/>
 
-# Serving Shiny 
+# Serving Shiny
 
 ## Hosting through shinyapps.io
 
 1. Create a [shinyapps.io](http://www.shinyapps.io/) account and follow sign up instructions.
 
-2. After **running** your shiny app, click on *Publish* > *Publish Document...* in the output viewer. 
+2. After **running** your shiny app, click on *Publish* > *Publish Document...* in the output viewer.
 
 3. In the resulting pop-up box connect your ShinyApps.io account following the onscreen instructions and **publish**.
 
@@ -460,7 +470,7 @@ Lets look at some examples.
 
 Key features include Harvard Key authentication and support for up to level 3 data security.
 
-# Institutional considerations
+# Institutional Considerations
 
 ## Researchers
 
@@ -476,7 +486,7 @@ Promotion of work!
 
 Across the University much data is managed by **old spreadsheet practices**
 
-And databases/reporting/visualization tools are separated from data science tools
+And databases/reporting/visualization tools are **separated** from data science tools
 
 <br>
 
@@ -496,15 +506,14 @@ They could help us transform our **UniveRsity** and Research practices.
 
 
 
-# Brainstorm session
+# Brainstorm Session
 
 ## Directions
 
-What do you want to use Rmarkdown/dashboards for? 
+What do you want to use Rmarkdown/dashboards for?
 
 What data? How would you want to look at the data?
 
 Everyone in teams contribute to a Google Document.
 
-<https://docs.google.com/document/d/1Nqux7jx8J-qoQJ7A4dP4bmL1U4uygcn9Xq2Qxithi-Y/edit?usp=sharing>
-
+<http://tinyurl.com/h3saxpk>
