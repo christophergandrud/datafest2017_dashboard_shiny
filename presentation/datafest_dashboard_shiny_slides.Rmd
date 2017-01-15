@@ -1,6 +1,6 @@
 ---
 title: "DataFest 2017 | Intro to dynamic web documents with dashboards and Shiny"
-author: "Christopher Gandrud & [Dustin Tingley](http://scholar.harvard.edu/dtingley)"
+author: "[Christopher Gandrud](http://christophergandrud.blogspot.com/p/research.html) & [Dustin Tingley](http://scholar.harvard.edu/dtingley)"
 date: "18 January 2017"
 output:
     ioslides_presentation:
@@ -42,7 +42,7 @@ Complete the survey: <https://goo.gl/forms/b0UuRnpxpfjwpiD93>
 
 - Basic familiarity with R (e.g. can install packages, source files, and so on).
 
-- Familiarity with R Markdown would be a benefit. For DataFest tutorial, see here Chris
+- Familiarity with R Markdown would be a benefit. For DataFest tutorial ([see earlier session](http://tinyurl.com/gvbehak))
 
 - Have a laptop with the following software installed:
 
@@ -92,8 +92,7 @@ You can use R Markdown to create HTML documents.
 
 See <http://rmarkdown.rstudio.com/> for an introduction to R Markdown.
 
-## Display code chunks refresh
-Chris why the refresh in slide title? grammar?
+## Display code chunks 
 
 Use three back-ticks (```) to **start** and **end** a code chunk that is **not run**.
 
@@ -149,7 +148,7 @@ Copy the code at <http://tinyurl.com/jx4gty2> used to create the survey summary 
 
 **Add an additional code chunk plotting** responses to the question "Have you ever built a 'data dashboard'?"
 
-Solution here Chris put a link
+(Example code available at: <http://tinyurl.com/hjcvwau>.)
 
 ## Hosting
 
@@ -303,7 +302,6 @@ Here's an example (using fake data): <http://tinyurl.com/hgk3fxx>
 <br>
 
 **You:** make a similar dashboard using R source code available at: <http://tinyurl.com/zwszswb>
-Chris what exactly are we asking them to do?
 
 Hint: it's typically good practice to place **setup code** in a separate chunk just under the header, with the code chunk option `include=FALSE`.
 
@@ -368,13 +366,11 @@ See: <https://rstudio.github.io/shinydashboard/>
 
 ## Shiny flexdashboards
 
-Chris I edited this slide to make it more accessible. Please review. 
-
 1. Add `runtime: shiny` to the YAML header options to declare the dashboard a shiny flexdashboard.
 
 2. Add a `{.sidebar}` attribute to the first column in the dashboard. This is where we will place the controls that give us more control over the dashboard.
 
-3. Add Shiny [inputs](http://shiny.rstudio.com/tutorial/lesson3/) (e.g., things that give us control over what data we look at) and [outputs](http://shiny.rstudio.com/tutorial/lesson4/) (e.g., ways to look at the data).
+3. Add Shiny [inputs](http://shiny.rstudio.com/tutorial/lesson3/) (e.g., what data we will put into the analysis) and [outputs](http://shiny.rstudio.com/tutorial/lesson4/) (e.g., how the results of the analysis will be displayed).
 
 ## Shiny dashboard example
 
@@ -427,9 +423,7 @@ The only difference is the includsion of functions to declare app inputs and out
 
 Create a new shiny dashboard that **subsets** our Google Sheets survey data based on participants **position** (e.g. "undergraduate", "faculty") and **returns a bar plot** of the subset's **R skill level**.
 
-Starter R code available at: Chris can you put a link to what would get people going, but not give them the answer? Then below they can look. That is better pedagogy for our format. dig?
-
-Completed example R code available at: <http://tinyurl.com/hwp5pgf>
+**Attempt on you're own first**, but if you get stuck, the ompleted example R code is available at: <http://tinyurl.com/hwp5pgf>
 
 ## Result
 

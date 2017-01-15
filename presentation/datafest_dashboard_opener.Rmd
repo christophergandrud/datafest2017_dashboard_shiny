@@ -1,6 +1,6 @@
 ---
 title: "DataFest 2017 | Teaser: web documents with dashboards and Shiny"
-author: "Christopher Gandrud & [Dustin Tingley](http://scholar.harvard.edu/dtingley)"
+author: "[Christopher Gandrud](http://christophergandrud.blogspot.com/p/research.html) & [Dustin Tingley](http://scholar.harvard.edu/dtingley)"
 date: "18 January 2017"
 output:
     ioslides_presentation:
