@@ -18,7 +18,7 @@ knitr::opts_chunk$set(message = FALSE)
 <br>
 <br>
 
-This slide deck is available at: [GET].
+This slide deck is available at: [GET] Chris fill in.
 
 ## Acknowledgements
 
@@ -28,7 +28,7 @@ This slide deck is available at: [GET].
 
 **Thanks** so much to **Garrett Grolemund and RStudio** for providing us with helpful suggestions and examples, some of which we've included here.
 
-Thanks to the open source R community for making life way cooleR.
+Thanks to the **open source** R community for making life way **cooleR**.
 
 ## About you
 
@@ -42,13 +42,13 @@ Complete the survey: <https://goo.gl/forms/b0UuRnpxpfjwpiD93>
 
 - Basic familiarity with R (e.g. can install packages, source files, and so on).
 
-- Familiarity with R Markdown would be a benefit.
+- Familiarity with R Markdown would be a benefit. For DataFest tutorial, see here Chris
 
 - Have a laptop with the following software installed:
 
     + R and RStudio
 
-    + `rmarkdown`, `flexdashboard`, and `shiny` packages for R
+    + `rmarkdown`, `flexdashboard`, and `shiny` **packages** for R
 
 - Working internet connection
 
@@ -353,11 +353,13 @@ See: <https://rstudio.github.io/shinydashboard/>
 
 ## Shiny flexdashboards
 
+Chris I edited this slide to make it more accessible. Please review. 
+
 1. Add `runtime: shiny` to the YAML header options to declare the dashboard a shiny flexdashboard.
 
-2. Add a `{.sidebar}` attribute to the first column in the dashboard. This is where we will place the controls.
+2. Add a `{.sidebar}` attribute to the first column in the dashboard. This is where we will place the controls that give us more control over the dashboard.
 
-3. Add Shiny [inputs](http://shiny.rstudio.com/tutorial/lesson3/) and [outputs](http://shiny.rstudio.com/tutorial/lesson4/).
+3. Add Shiny [inputs](http://shiny.rstudio.com/tutorial/lesson3/) (e.g., things that give us control over what data we look at) and [outputs](http://shiny.rstudio.com/tutorial/lesson4/) (e.g., ways to look at the data).
 
 ## Shiny dashboard example
 
@@ -366,6 +368,8 @@ See: <https://rstudio.github.io/shinydashboard/>
 Source: <http://rmarkdown.rstudio.com/flexdashboard/shiny.html>
 
 ## Result
+
+Chris is there a hosted version of this? We in our presentation don't need to go to our hosted version. But would be nice for slides if link out. nor worries if not, just delete.
 
 ![](img/geyser_screenshot.png)
 
@@ -410,7 +414,9 @@ The only difference is the includsion of functions to declare app inputs and out
 
 Create a new shiny dashboard that **subsets** our Google Sheets survey data based on participants **position** (e.g. "undergraduate", "faculty") and **returns a bar plot** of the subset's **R skill level**.
 
-R code available at: <http://tinyurl.com/hwp5pgf>
+Starter R code available at: Chris can you put a link to what would get people going, but not give them the answer? Then below they can look. That is better pedagogy for our format. dig?
+
+Completed example R code available at: <http://tinyurl.com/hwp5pgf>
 
 ## Result
 
@@ -425,6 +431,10 @@ R code available at: <http://tinyurl.com/hwp5pgf>
 The [Vice Provost for Advances in Learning- Research group](http://vpal.harvard.edu/research) as well as others at Harvard have invested in Dashboards that are dyanamic and interactive via Shiny.
 
 Lets look at some examples.
+
+These are more involved on the programming side, but still make heavy use of packages.
+
+Further, they can serve as templates as it is common to share Shiny app code! <https://shiny.rstudio.com/gallery/>
 
 ## Examples: Item Response Theory for quiz questions
 
@@ -484,13 +494,15 @@ Promotion of work!
 
 ## Staff/Administration
 
+As an institution we generate tons of data. 
+
 Across the University much data is managed by **old spreadsheet practices**
 
 And databases/reporting/visualization tools are **separated** from data science tools
 
 <br>
 
-We are not ok with that in research, should we revisit this in other places?
+We are **not** ok with that in research, should we revisit this in other places?
 
 R easily integrates with **modern databases** (SQL etc.)
 
@@ -502,7 +514,7 @@ Our students are learning R in their classes
 
 R is now one of the most sought after programming language/we are in the era of big data
 
-They could help us transform our **UniveRsity** and Research practices.
+They could help us transform our **UniveRsity** and **Research** practices.
 
 
 
