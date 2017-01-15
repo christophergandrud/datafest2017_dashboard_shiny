@@ -80,7 +80,7 @@ plot_ly(data = rm_exp, x = ~Var1, y = ~Freq) %>%
 Responses to "Have you ever built a 'data dashboard'?"
 
 ```{r}
-# Find position counts
+# Find exerpience
 dash_exp <- table(student_data$dashboard_experience) %>% data.frame
 
 # Plot
