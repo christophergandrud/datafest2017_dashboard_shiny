@@ -93,7 +93,9 @@ See <http://rmarkdown.rstudio.com/> for an introduction to R Markdown.
 
 Use three back-ticks (```) to **start** and **end** a code chunk that is **not run**.
 
-To create a **knit-able** code chunk begin the chunk with ````{r}`. Close the chunk with another three ticks.
+To create a **knit-able** code chunk begin the chunk with ````{r}`. 
+
+Close the chunk with another three tick (```).
 
 ## Chunk options
 
@@ -144,6 +146,10 @@ Copy the code at <http://tinyurl.com/jx4gty2> used to create the survey summary 
 **Add an additional code chunk plotting** responses to the question "Have you ever built a 'data dashboard'?"
 
 ## Hosting
+
+<br>
+<br>
+<br>
 
 Hosting is actually pretty easy. More soon on this!
 
@@ -333,7 +339,9 @@ Note: RPubs documents do not update when new data is available. It is a static f
 
 # Dynamic + Interactive Shiny Apps
 
-[Shiny](https://shiny.rstudio.com/) apps allow you to create interactive apps that leverage R to conduct analyses in the browser and present results.
+## Shiny apps
+
+[Shiny](https://shiny.rstudio.com/) apps allow you to create interactive apps that leverage R to conduct **analyses in the browser** and present results.
 
 For example:
 
@@ -368,8 +376,6 @@ Chris I edited this slide to make it more accessible. Please review.
 Source: <http://rmarkdown.rstudio.com/flexdashboard/shiny.html>
 
 ## Result
-
-Chris is there a hosted version of this? We in our presentation don't need to go to our hosted version. But would be nice for slides if link out. nor worries if not, just delete.
 
 ![](img/geyser_screenshot.png)
 
@@ -424,10 +430,6 @@ Completed example R code available at: <http://tinyurl.com/hwp5pgf>
 
 ## Show and tell
 
-<br>
-<br>
-<br>
-
 The [Vice Provost for Advances in Learning- Research group](http://vpal.harvard.edu/research) as well as others at Harvard have invested in Dashboards that are dyanamic and interactive via Shiny.
 
 Lets look at some examples.
@@ -444,12 +446,12 @@ Further, they can serve as templates as it is common to share Shiny app code! <h
 
 
 
-## Examples: Sankey diagram for flow through HarvardX courses
+## Ex.: Sankey diagram for flow through HarvardX courses
 
 ![](img/sankey.png)
 
 
-## Examples: Structural Topic Modelling via stmGUI package
+## Ex.: Structural Topic Modelling via stmGUI package
 
 ![](img/stmGUI.png)
 
