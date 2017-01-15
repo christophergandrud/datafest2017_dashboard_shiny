@@ -1,6 +1,6 @@
 ---
 title: "DataFest 2017 | Teaser: web documents with dashboards and Shiny"
-author: "Christopher Gandrud & Dustin Tingley"
+author: "Christopher Gandrud & [Dustin Tingley](http://scholar.harvard.edu/dtingley)"
 date: "18 January 2017"
 output:
     ioslides_presentation:
@@ -13,23 +13,35 @@ knitr::opts_chunk$set(message = FALSE)
 ```
 
 
-# Dynamic and interactive documents
+# Dynamic and interactive documents/dashboards
 
-## Interactive documents
+## Interactive documents/dashboards
 
 The perspectives in this session share some really important goals:
 
-Letting people see data 
+Letting people **see data** 
 
-Letting people explore data
+Letting people **explore data**
 
-Facilitating decisions and insights via data
+Facilitating **decisions and insights** via data
+
+## The R Approach
+
+[R](https://www.r-project.org/) 
+
+<br>
+
+Via [RStudio](www.rstudio.com):
+
+[flexdashboard](http://rmarkdown.rstudio.com/flexdashboard/) 
+
+[shiny](https://www.rstudio.com/products/shiny/)
 
 
 
-# htmlwidgets: The Power of Packages
+# The Power of Packages
 
-## Packages {.build}
+## Packages  
 
 The Open Source R community writes packages that enable users to **do more but code less**.
 
@@ -85,76 +97,60 @@ library(DT)
 datatable(iris, options = list(pageLength = 5))
 ```
 
-# Static dashboards
-
-## What is a dashboard?
-
-<br>
-<br>
-<br>
-Dashboards provide an **overview** of key data.
-
-<br>
-
-The [flexdashboard](http://rmarkdown.rstudio.com/flexdashboard/) R package allows you to easily create dashboards with [R Markdown](http://rmarkdown.rstudio.com/).
-
-## For example . . .
-
-![](img/goog_dashboard_example.png)
-
-# Serving Shiny
-
-## Hosting through shinyapps.io
-
-1. Create a [shinyapps.io](http://www.shinyapps.io/) account and follow sign up instructions.
-
-2. After **running** your shiny app, click on *Publish* > *Publish Document...* in the output viewer.
-
-3. In the resulting pop-up box connect your ShinyApps.io account following the onscreen instructions and **publish**.
-
-![](img/connect_publishers.png)
 
 
-## Hosting through IQSS
+# Serving Dashboards
 
-**If data cannot leave Harvard servers**, then IQSS/VPAL maintain a Shiny Server
+## Hosting Options
 
-Key features include Harvard Key authentication and support for up to level 3 data security.
+Many options, with free! academic licenses
 
-# Institutional Considerations
+[shinyapps.io](http://www.shinyapps.io/)
 
-## Researchers
+[RPubs](https://rpubs.com/)
 
-When working with data, need to use **reproducible code**
+[IQSS](http://www.iq.harvard.edu/) (in collaboration with [VPAL-Research](http://vpal.harvard.edu/research) ) maintains a Shiny Server for advanced use cases (Harvard Key authentication, level 3 security)
 
-Need to make data **transparent**
+#Examples
 
-Tools for ex ante (e.g., power analysis) / ex post investigations (e.g., outliers)
+##Galery
 
-Promotion of work!
+[Shiny Gallery](https://shiny.rstudio.com/gallery/)
 
-## Staff/Administration
+##Harvard Examples
 
-As an institution we generate tons of data. 
+[DGSView](https://hmdc.shinyapps.io/GovDGSExample/)
 
-Across the University much data is managed by **old spreadsheet practices**
+Course Planning
+
+##Shiny as GUI for a package
+
+The [Structural Topic Model](www.structuraltopicmodel.com) is a new machine learning algorithm for analyzing text
+
+It also has a GUI front end for people who do not want to code directly in R! (best for not huge data sets)
+
+library(stm)
+
+library(stmgui)
+
+runStmGui()
+
+
+# Additional considerations
+
+
+## Additional considerations
+
+99.99% of what you will see today is **free**.
+
+Across the University much data is managed by **old spreadsheet practices**/Researchers also generating lots of data
 
 And databases/reporting/visualization tools are **separated** from data science tools
 
-<br>
+R easily integrates with **modern databases** (SQL etc.)/has all the statistics and machine learning tools you'd want
 
-We are **not** ok with that in research, should we revisit this in other places?
+Our students learn R, and their employers want them to know R
 
-R easily integrates with **modern databases** (SQL etc.)
 
-99.9% of what you saw today is **free**.
-
-## Students
-
-Our students are learning R in their classes
-
-R is now one of the most sought after programming language/we are in the era of big data
-
-They could help us transform our **UniveRsity** and **Research** practices.
 
  

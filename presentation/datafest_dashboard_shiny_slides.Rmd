@@ -1,6 +1,6 @@
 ---
 title: "DataFest 2017 | Intro to dynamic web documents with dashboards and Shiny"
-author: "Christopher Gandrud & Dustin Tingley"
+author: "Christopher Gandrud & [Dustin Tingley](http://scholar.harvard.edu/dtingley)"
 date: "18 January 2017"
 output:
     ioslides_presentation:
@@ -63,6 +63,8 @@ visualisations.
 Potentially--though not always--more engaging and could let users explore data
 on their own.
 
+These slides are in html!
+
 ## Big distinction:
 
 **Client Side**: HTML documenst are rendered on the user's (client's) computer. Often
@@ -83,6 +85,7 @@ Can be **instantaneously updated** to reflect new data.
 # R Markdown to HTML
 
 ## R Markdown Review
+R Markdown is a scripting language (like LaTeX) that lets you embed R code to run analyses within your text. These slides are written in RMarkdown.
 
 <br>
 You can use R Markdown to create HTML documents.
@@ -90,6 +93,7 @@ You can use R Markdown to create HTML documents.
 See <http://rmarkdown.rstudio.com/> for an introduction to R Markdown.
 
 ## Display code chunks refresh
+Chris why the refresh in slide title? grammar?
 
 Use three back-ticks (```) to **start** and **end** a code chunk that is **not run**.
 
@@ -145,6 +149,8 @@ Copy the code at <http://tinyurl.com/jx4gty2> used to create the survey summary 
 
 **Add an additional code chunk plotting** responses to the question "Have you ever built a 'data dashboard'?"
 
+Solution here Chris put a link
+
 ## Hosting
 
 <br>
@@ -154,7 +160,7 @@ Copy the code at <http://tinyurl.com/jx4gty2> used to create the survey summary 
 Hosting is actually pretty easy. More soon on this!
 
 
-# htmlwidgets: The Power of Packages
+# The Power of Packages
 
 ## Packages {.build}
 
@@ -177,7 +183,7 @@ Packages are rapidly expanding R's capabilities.
 
 There are a growing number of R packages that make it easy to create interactive/web native visualisations.
 
-Many of these are based on a framework called **htmlwidgets**.
+Many of these are based on a framework called **htmlwidgets**. But also see [Plotly](https://plot.ly/r/shiny-tutorial/)
 
 ## Leaflet
 
@@ -297,6 +303,7 @@ Here's an example (using fake data): <http://tinyurl.com/hgk3fxx>
 <br>
 
 **You:** make a similar dashboard using R source code available at: <http://tinyurl.com/zwszswb>
+Chris what exactly are we asking them to do?
 
 Hint: it's typically good practice to place **setup code** in a separate chunk just under the header, with the code chunk option `include=FALSE`.
 
@@ -531,3 +538,16 @@ What data? How would you want to look at the data?
 Everyone in teams contribute to a Google Document.
 
 <http://tinyurl.com/h3saxpk>
+
+
+#More Resources/Tutorial
+
+##Tutorial Links
+
+From:
+[RStudio](http://shiny.rstudio.com/tutorial/)
+[Dean Attali](http://deanattali.com/blog/building-shiny-apps-tutorial/)
+[Plotly](https://plot.ly/r/shiny-tutorial/)
+[Joe Cheng](https://github.com/jcheng5/user2016-tutorial-shiny)
+
+
