@@ -20,6 +20,10 @@ knitr::opts_chunk$set(message = FALSE)
 
 This slide deck is available at: [GET] Chris fill in.
 
+<br>
+
+All of the example code is available at: <http://tinyurl.com/za2wx8h>.
+
 ## Acknowledgements
 
 <br>
@@ -301,7 +305,6 @@ We could make a dashboard from the hometowns you provided.
 Here's an example (using fake data): <http://tinyurl.com/hgk3fxx>
 
 <br>
-<br>
 
 **You:** make a similar dashboard using R source code available at: <http://tinyurl.com/zwszswb>
 
@@ -310,7 +313,6 @@ Starter steps: 1) Turn sections into code chunks. 2) Insert YAML header. 3) Sepa
 Hint: it's typically good practice to place **setup code** in a separate chunk just under the header, with the code chunk option `include=FALSE`.
 
 Full code for the exercise can be found at: <http://tinyurl.com/zwk5het>.
-
 
  
 # Hosting documents rendered on the client-side
@@ -428,9 +430,11 @@ Create a new shiny dashboard that **subsets** our Google Sheets survey data base
 
 A starter script is here: <http://tinyurl.com/zt3fcvb>.
 
-Also, need to tell them what to save the file as and how to compile it so it launches the app....The completed example doesn't compile into this...it doesn't have the runtime shiny etc, so I must be missing something ). 
+## If you get stuck . . .
 
- but if you get stuck, the completed example R code is available at: <http://tinyurl.com/hwp5pgf>
+If you get stuck, the completed example R code is available at: <http://tinyurl.com/hwp5pgf>.
+
+The complete R Markdown file with markup + R code (everything you need for the shiny app) is here: <http://tinyurl.com/jh3pnww>.
 
 ## Result
 
