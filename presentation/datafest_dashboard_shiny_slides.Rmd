@@ -426,7 +426,7 @@ Create a new shiny dashboard that **subsets** our Google Sheets survey data base
 
 **Attempt on you're own first**.
 
-A starter script is here ( Chris, this would be something that does some basic setup for them..up to student_data$r_experience.)
+A starter script is here: <http://tinyurl.com/zt3fcvb>.
 
 Also, need to tell them what to save the file as and how to compile it so it launches the app....The completed example doesn't compile into this...it doesn't have the runtime shiny etc, so I must be missing something ). 
 
