@@ -144,7 +144,9 @@ Which downloads your survey data from Google Sheets and creates . . .
 <br>
 <br>
 
-Copy the code at <http://tinyurl.com/jx4gty2> used to create the survey summary document.
+Copy the code at <http://tinyurl.com/jx4gty2> used to create the survey summary document into a .Rmd file in RStudio.
+
+Compile to html.
 
 **Add an additional code chunk plotting** responses to the question "Have you ever built a 'data dashboard'?"
 
@@ -303,15 +305,14 @@ Here's an example (using fake data): <http://tinyurl.com/hgk3fxx>
 
 **You:** make a similar dashboard using R source code available at: <http://tinyurl.com/zwszswb>
 
+Starter steps: 1) Turn sections into code chunks. 2) Insert YAML header. 3) Separate columns
+
 Hint: it's typically good practice to place **setup code** in a separate chunk just under the header, with the code chunk option `include=FALSE`.
-
-## Full code
-
-<br>
-<br>
 
 Full code for the exercise can be found at: <http://tinyurl.com/zwk5het>.
 
+
+ 
 # Hosting documents rendered on the client-side
 
 ## Hosting client-side rendered HTML
@@ -423,11 +424,26 @@ The only difference is the includsion of functions to declare app inputs and out
 
 Create a new shiny dashboard that **subsets** our Google Sheets survey data based on participants **position** (e.g. "undergraduate", "faculty") and **returns a bar plot** of the subset's **R skill level**.
 
-**Attempt on you're own first**, but if you get stuck, the ompleted example R code is available at: <http://tinyurl.com/hwp5pgf>
+**Attempt on you're own first**.
+
+A starter script is here ( Chris, this would be something that does some basic setup for them..up to student_data$r_experience.)
+
+Also, need to tell them what to save the file as and how to compile it so it launches the app....The completed example doesn't compile into this...it doesn't have the runtime shiny etc, so I must be missing something ). 
+
+ but if you get stuck, the completed example R code is available at: <http://tinyurl.com/hwp5pgf>
 
 ## Result
 
 ![](img/shiny_student_basic_screenshot.png)
+
+## Pure Shiny
+
+Don't need to use flexdashboards, can write pure Shiny apps. Outside of our scope today.
+
+[shinydashboard](https://rstudio.github.io/shinydashboard/) package is probably the easiest way to do this.
+
+95% the same as what we do above.
+
 
 ## Show and tell
 
