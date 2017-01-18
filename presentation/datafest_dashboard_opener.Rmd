@@ -99,9 +99,18 @@ datatable(iris, options = list(pageLength = 5))
 
 
 
-# Serving Dashboards
+# Serving Content
 
-## Hosting Options
+## Interactive Documents
+
+See Tools for Reproducible Data Science session run by Christopher
+
+<br>
+<br>
+
+[RMarkdown](rmarkdown.rstudio.com)
+
+## Dashboard Hosting Options
 
 Many options, with free! academic licenses
 
