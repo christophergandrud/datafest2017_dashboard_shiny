@@ -1,5 +1,13 @@
 # SETUP CHUNK ------------------------------------------------------------------
-# Load required packages. Install if needed.
+# Load required packages, install if needed.
+pkgs <- c('flexdashboard', 'gsheet', 'ggmap', 'dplyr', 'leaflet', 'sp',
+          'rworldmap', 'networkD3', 'geosphere', 'plotly')
+
+pkg_missing <- pkgs[!(pkgs %in% installed.packages()[, 1])]
+if (length(pkg_missing) > 0) install.packages(pkg_missing, 
+                                              repos='http://cran.us.r-project.org')
+
+
 library(flexdashboard)
 library(gsheet)
 library(ggmap)
@@ -19,6 +27,7 @@ student_data <- gsheet2tbl(URL)
 hometowns <- student_data$`What do you consider to be your "home town"?`
 hometowns <- hometowns[!is.na(hometowns)]
 hometown_coords <- geocode(hometowns)
+hometown_coords <- subset(hometown_coords, !is.na(lon))
 
 
 
