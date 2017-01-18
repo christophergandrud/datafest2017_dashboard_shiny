@@ -7,7 +7,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-# Load required packages. Install if needed.
+# Load required packages, install if needed.
 pkgs <- c('flexdashboard', 'gsheet', 'ggmap', 'dplyr', 'leaflet', 'sp',
           'rworldmap', 'networkD3', 'geosphere', 'plotly')
 
