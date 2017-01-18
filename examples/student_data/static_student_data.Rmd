@@ -8,6 +8,14 @@ output:
 
 ```{r setup, include=FALSE}
 # Load required packages. Install if needed.
+pkgs <- c('flexdashboard', 'gsheet', 'ggmap', 'dplyr', 'leaflet', 'sp',
+          'rworldmap', 'networkD3', 'geosphere', 'plotly')
+
+pkg_missing <- pkgs[!(pkgs %in% installed.packages()[, 1])]
+if (length(pkg_missing) > 0) install.packages(pkg_missing, 
+                                              repos='http://cran.us.r-project.org')
+
+
 library(flexdashboard)
 library(gsheet)
 library(ggmap)
@@ -27,6 +35,7 @@ student_data <- gsheet2tbl(URL)
 hometowns <- student_data$`What do you consider to be your "home town"?`
 hometowns <- hometowns[!is.na(hometowns)]
 hometown_coords <- geocode(hometowns)
+hometown_coords <- subset(hometown_coords, !is.na(lon))
 ```
 
 Column {data-width=650}
@@ -76,6 +85,8 @@ simpleNetwork(distances[, 1:2], zoom = TRUE)
 
 ```{r}
 # Function to find countries that each hometown is in
+
+
 coords2country = function(points)
 {  
     # Function from: http://stackoverflow.com/a/14342127
